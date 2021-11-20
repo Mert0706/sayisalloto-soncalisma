@@ -1,5 +1,6 @@
 package com.bilgeadam.sayisallotoson;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class SayisalLoto {
@@ -17,10 +18,25 @@ public class SayisalLoto {
         //6'lı bir array oluşturduk.
         int sayilar[] = new int[6];
 
-        //Dongüyle array'i dolduralım
+        int temp_sayi=0;
+        int sonuc = 0;
 
+        //Dongüyle array'i dolduralım
         for (int i = 0; i<6; i++){
-            sayilar[i] = loto.sayiGetir(49);
+
+            while (sonuc >= 0){
+                temp_sayi = loto.sayiGetir(49);
+
+                //Arrayı Sıralayın
+                Arrays.sort(sayilar);
+
+                //binarySearch Kullanmanın şartı, arrayin sıralı olmasıdır.
+                sonuc = Arrays.binarySearch(sayilar, temp_sayi);
+            }
+
+            sayilar[i] = temp_sayi;
+            sonuc = 0;
+
         }
 
         //arrayi yazdıralım
