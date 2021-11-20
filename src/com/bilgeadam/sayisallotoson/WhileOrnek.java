@@ -19,6 +19,8 @@ public class WhileOrnek {
 
             sayac = sayac +1;
 
+            //döngü sayısının belli olmadığı durumlarda for belli olan durumlarda while tercih edilir.
+
         }
 
     }
